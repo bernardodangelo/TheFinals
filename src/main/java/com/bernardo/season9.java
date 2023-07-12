@@ -2,13 +2,20 @@ package com.bernardo;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -91,5 +98,15 @@ public final class season9 extends JavaPlugin implements Listener {
         TextComponent component = new TextComponent(message2);
         component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/kZQKjBe"));
         return component;
+    }
+
+    @EventHandler
+    public void onPlayerItemConsume(PlayerItemConsumeEvent event) {
+        Player player = event.getPlayer();
+        ItemStack item = event.getItem();
+
+        if (item != null && item.getType() == Material.MUSHROOM_STEW) {
+            player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 40, 0));
+        }
     }
 }
