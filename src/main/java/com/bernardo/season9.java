@@ -3,6 +3,8 @@ package com.bernardo;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -49,7 +51,7 @@ public final class season9 extends JavaPlugin implements Listener {
     @EventHandler
     public void onCreatureSpawn(CreatureSpawnEvent event) {
         if (event.getEntityType() == EntityType.PIG && event.getSpawnReason() == SpawnReason.NATURAL) {
-            if (random.nextDouble() <= 0.005) {
+            if (random.nextDouble() <= 0.05) {
                 event.getEntity().setCustomName("Technoblade");
                 event.getEntity().setCustomNameVisible(true);
             }
@@ -59,7 +61,7 @@ public final class season9 extends JavaPlugin implements Listener {
     @EventHandler
     public void onCreatureSpawnNatural(CreatureSpawnEvent event) {
         if (event.getEntityType() == EntityType.PIG && event.getSpawnReason() == SpawnReason.NATURAL) {
-            if (random.nextDouble() <= 0.005) {
+            if (random.nextDouble() <= 0.05) {
                 event.getEntity().setCustomName("Technoblade");
                 event.getEntity().setCustomNameVisible(true);
             }
@@ -108,5 +110,19 @@ public final class season9 extends JavaPlugin implements Listener {
         if (item != null && item.getType() == Material.MUSHROOM_STEW) {
             player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 40, 0));
         }
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (command.getName().equalsIgnoreCase("regras")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                player.sendMessage(ChatColor.GREEN + "As regras do servidor são: " + ChatColor.LIGHT_PURPLE + "https://www.youtube.com/");
+            } else {
+                sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
+            }
+            return true;
+        }
+        return false;
     }
 }
