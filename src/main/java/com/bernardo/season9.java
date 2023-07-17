@@ -70,7 +70,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     player.spigot().sendMessage(createComponent1());
                 }
             }
-        }.runTaskTimer(this, 0L, 129 * 60 * 20L); // 87 * 60 = 129min
+        }.runTaskTimer(this, 0L, 77 * 60 * 20L); // 87 * 60 = 129min
     }
 
     private void startTimer2() {
@@ -86,7 +86,7 @@ public final class season9 extends JavaPlugin implements Listener {
 
     private TextComponent createComponent1() {
         TextComponent component = new TextComponent(message1);
-        component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/kZQKjBe"));
+        component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "docs.google.com/document/d/1TCZrqdJc6_h1r1O-T2q5v0l2jnFeOTE2ZuuHEi3PIOs/edit?usp=sharing"));
         return component;
     }
 
@@ -128,7 +128,7 @@ public final class season9 extends JavaPlugin implements Listener {
         if (command.getName().equalsIgnoreCase("item1")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                if (player.hasPermission("season9.admin")) { // Verifica se o jogador tem a permissão "season9.admin"
+                if (player.hasPermission("season9.admin")) {
                     ItemStack item = new ItemStack(Material.CHERRY_LOG);
                     ItemMeta itemMeta = item.getItemMeta();
                     itemMeta.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + "Abertura da SEASON 9");
