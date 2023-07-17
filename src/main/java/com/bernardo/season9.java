@@ -3,6 +3,7 @@ package com.bernardo;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.block.Sign;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
@@ -153,5 +154,13 @@ public final class season9 extends JavaPlugin implements Listener {
             return true;
         }
         return false;
+    }
+    @EventHandler
+    public void rightClickSign(PlayerInteractEvent event) {
+        if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            if (event.getClickedBlock().getType() == Material.OAK_SIGN || event.getClickedBlock().getType() == Material.OAK_WALL_SIGN) {
+                event.setCancelled(true);
+            }
+        }
     }
 }
