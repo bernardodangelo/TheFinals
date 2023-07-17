@@ -6,3 +6,6 @@ commands:
   regras:
     description: Mostra as regras do servidor
     usage: /regras
+  item1:
+    description: Recebe um tronco de árvore cherry customizado
+    usage: /item1
