@@ -6,6 +6,15 @@ commands:
   regras:
     description: Mostra as regras do servidor
     usage: /regras
+  loja:
+    description: Mostra como fazer loja no servidor
+    usage: /loja
+  voice:
+    description: Voice
+    usage: /voice
+  terreno:
+    description: Terreno
+    usage: /terreno
   item1:
     description: Recebe um tronco de árvore cherry customizado
     usage: /item1
