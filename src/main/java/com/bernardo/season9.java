@@ -3,7 +3,6 @@ package com.bernardo;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.block.Sign;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
@@ -16,7 +15,6 @@ import org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
@@ -26,9 +24,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public final class season9 extends JavaPlugin implements Listener {
@@ -37,7 +33,7 @@ public final class season9 extends JavaPlugin implements Listener {
             ChatColor.RED + " Regras do Servidor: " +
             ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "docs.google.com/document/d/1TCZrqdJc6_h1r1O-T2q5v0l2jnFeOTE2ZuuHEi3PIOs/edit?usp=sharing";
 
-    private String message2 = ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "]" + ChatColor.AQUA + " Entre no Discord da Servidor: " +
+    private String message2 = ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "]" + ChatColor.AQUA + " Entre no Discord do Servidor: " +
             ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "discord.gg/kZQKjBe";
 
     @Override
@@ -134,15 +130,15 @@ public final class season9 extends JavaPlugin implements Listener {
                 sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
             }
             return true;
-        }else if (command.getName().equalsIgnoreCase("loja")) {
-                if (sender instanceof Player) {
-                    Player player = (Player) sender;
-                    player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como criar uma loja no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://www.twitch.tv/excambaw/clip/CleverTiredSkirretHassaanChop-UpCCxcMlxSffw_Cg");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
-                }
-                return true;
-        }else if (command.getName().equalsIgnoreCase("terreno")) {
+        } else if (command.getName().equalsIgnoreCase("loja")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como criar uma loja no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://www.twitch.tv/excambaw/clip/CleverTiredSkirretHassaanChop-UpCCxcMlxSffw_Cg");
+            } else {
+                sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
+            }
+            return true;
+        } else if (command.getName().equalsIgnoreCase("terreno")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como proteger terreno no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://www.twitch.tv/excambaw/clip/ZanyPatientBeaverDoggo-vdbvmQRk5mYc8Uxd?filter=clips&range=7d");
@@ -150,7 +146,7 @@ public final class season9 extends JavaPlugin implements Listener {
                 sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
             }
             return true;
-        }else if (command.getName().equalsIgnoreCase("voice")) {
+        } else if (command.getName().equalsIgnoreCase("voice")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como usar o chat de voz: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://www.twitch.tv/excambaw/clip/DaintySpeedyLatteTakeNRG--yk3P0AsJ2GR_lDg?filter=clips&range=7d&sort=time");
