@@ -53,7 +53,7 @@ public final class season9 extends JavaPlugin implements Listener {
     @EventHandler
     public void onCreatureSpawn(CreatureSpawnEvent event) {
         if (event.getEntityType() == EntityType.PIG && event.getSpawnReason() == SpawnReason.NATURAL) {
-            if (random.nextDouble() <= 0.05) {
+            if (random.nextDouble() <= 0.01) {
                 event.getEntity().setCustomName("Technoblade");
                 event.getEntity().setCustomNameVisible(true);
             }
@@ -105,7 +105,7 @@ public final class season9 extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerInteract(PlayerInteractEvent event) {
+    public void onPlayerInteractAbertura(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         ItemStack item = player.getInventory().getItemInMainHand();
 
@@ -113,6 +113,21 @@ public final class season9 extends JavaPlugin implements Listener {
             if (item != null && item.getType() == Material.CHERRY_LOG && item.hasItemMeta()) {
                 ItemMeta itemMeta = item.getItemMeta();
                 if (itemMeta != null && itemMeta.getDisplayName().equals(ChatColor.YELLOW + "" + ChatColor.BOLD + "Abertura da SEASON 9")) {
+                    event.setCancelled(true);
+                }
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPlayerInteractPlace(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+        ItemStack item = player.getInventory().getItemInMainHand();
+
+        if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            if (item != null && item.getType() == Material.RED_WOOL && item.hasItemMeta()) {
+                ItemMeta itemMeta = item.getItemMeta();
+                if (itemMeta != null && itemMeta.getDisplayName().equals(ChatColor.RED + "" + ChatColor.BOLD + "r/Place 2023")) {
                     event.setCancelled(true);
                 }
             }
@@ -166,6 +181,25 @@ public final class season9 extends JavaPlugin implements Listener {
 
                     player.getInventory().addItem(item);
                     player.sendMessage(ChatColor.GREEN + "Você recebeu o item especial da abertura da SEASON 9.");
+                } else {
+                    player.sendMessage(ChatColor.RED + "Você não tem permissão para executar este comando.");
+                }
+            } else {
+                sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
+            }
+            return true;
+        } else if (command.getName().equalsIgnoreCase("item2")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                if (player.hasPermission("season9.item2")) {
+                    ItemStack item = new ItemStack(Material.RED_WOOL);
+                    ItemMeta itemMeta = item.getItemMeta();
+                    itemMeta.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "r/Place 2023");
+                    itemMeta.setLore(Arrays.asList(ChatColor.AQUA + "Item Colecionável", ChatColor.GRAY + "Item dado aos jogadores que ajudaram ativamente no r/Place 2023. (25/07/2023)"));
+                    item.setItemMeta(itemMeta);
+
+                    player.getInventory().addItem(item);
+                    player.sendMessage(ChatColor.GREEN + "Você recebeu o item especial do r/Place 2023.");
                 } else {
                     player.sendMessage(ChatColor.RED + "Você não tem permissão para executar este comando.");
                 }

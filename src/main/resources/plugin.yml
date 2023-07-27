@@ -16,5 +16,8 @@ commands:
     description: Terreno
     usage: /terreno
   item1:
-    description: Recebe um tronco de árvore cherry customizado
+    description: Recebe o item colecionável da abertura do servidor
     usage: /item1
+  item2:
+    description: Recebe o item colecionável do r/Place 2023
+    usage: /item2
