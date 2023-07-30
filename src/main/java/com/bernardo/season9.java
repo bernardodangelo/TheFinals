@@ -195,7 +195,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     ItemStack item = new ItemStack(Material.RED_WOOL);
                     ItemMeta itemMeta = item.getItemMeta();
                     itemMeta.setDisplayName(ChatColor.RED + "" + ChatColor.BOLD + "r/Place 2023");
-                    itemMeta.setLore(Arrays.asList(ChatColor.AQUA + "Item Colecionável", ChatColor.GRAY + "Item dado aos jogadores que ajudaram ativamente no r/Place 2023. (25/07/2023)"));
+                    itemMeta.setLore(Arrays.asList(ChatColor.AQUA + "Item Colecionável", ChatColor.GRAY + "Item dado aos jogadores que ajudaram ativamente na", ChatColor.GRAY + "construção das artes no r/Place 2023 (25/07/2023)."));
                     item.setItemMeta(itemMeta);
 
                     player.getInventory().addItem(item);
