@@ -210,14 +210,4 @@ public final class season9 extends JavaPlugin implements Listener {
         }
         return false;
     }
-
-
-    @EventHandler
-    public void rightClickSign(PlayerInteractEvent event) {
-        if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            if (event.getClickedBlock().getType() == Material.OAK_SIGN || event.getClickedBlock().getType() == Material.OAK_WALL_SIGN) {
-                event.setCancelled(true);
-            }
-        }
-    }
 }
