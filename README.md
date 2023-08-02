@@ -1,1 +1,1 @@
-# Season 9 Plugin
+# Season 9 Plugin ⛏️
