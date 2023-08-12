@@ -15,6 +15,7 @@ commands:
   terreno:
     description: Terreno
     usage: /terreno
+
   item1:
     description: Recebe o item colecionável da abertura do servidor
     usage: /item1

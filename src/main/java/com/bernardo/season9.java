@@ -37,8 +37,8 @@ public final class season9 extends JavaPlugin implements Listener {
             ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "discord.gg/kZQKjBe";
 
     private String message3 = ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "]" + ChatColor.AQUA + " Vire " +
-            ChatColor.DARK_PURPLE + ChatColor.BOLD + "SUB" + ChatColor.AQUA + " ou " + ChatColor.GREEN + ChatColor.BOLD + "VIP " + ChatColor.AQUA + " utilizando " + ChatColor.DARK_PURPLE + ChatColor.BOLD + "/sub" + ChatColor.AQUA + " ou " + ChatColor.GREEN + ChatColor.BOLD + "/vip" +
-            ChatColor.AQUA + "para ter acesso a comandos como:" + ChatColor.RED + "/sethome, /tpa" + ChatColor.AQUA + " e " + ChatColor.RED + "/skin.";
+            ChatColor.DARK_PURPLE + ChatColor.BOLD + "SUB" + ChatColor.AQUA + " ou " + ChatColor.GREEN + ChatColor.BOLD + "VIP" + ChatColor.AQUA + " utilizando: " + ChatColor.DARK_PURPLE + ChatColor.BOLD + "/sub" + ChatColor.AQUA + " e " + ChatColor.GREEN + ChatColor.BOLD + "/vip" +
+            ChatColor.AQUA + " para ter acesso aos comandos: " + ChatColor.RED + "/sethome, /tpa" + ChatColor.AQUA + " e " + ChatColor.RED + "/skin.";
 
     @Override
     public void onEnable() {
@@ -92,7 +92,7 @@ public final class season9 extends JavaPlugin implements Listener {
             @Override
             public void run() {
                 for (Player player : Bukkit.getOnlinePlayers()) {
-                    player.spigot().sendMessage(createComponent2());
+                    player.spigot().sendMessage(createComponent3());
                 }
             }
         }.runTaskTimer(this, 0L, 1 * 60 * 20L); // 40 * 60 = 60min
@@ -107,6 +107,10 @@ public final class season9 extends JavaPlugin implements Listener {
     private TextComponent createComponent2() {
         TextComponent component = new TextComponent(message2);
         component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/kZQKjBe"));
+        return component;
+    }
+    private TextComponent createComponent3() {
+        TextComponent component = new TextComponent(message3);
         return component;
     }
 
@@ -149,6 +153,8 @@ public final class season9 extends JavaPlugin implements Listener {
             }
         }
     }
+
+
 
 
     @Override
@@ -245,7 +251,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     ItemStack item = new ItemStack(Material.NETHERRACK);
                     ItemMeta itemMeta = item.getItemMeta();
                     itemMeta.setDisplayName(ChatColor.DARK_RED + "" + ChatColor.BOLD + "Abertura do Nether");
-                    itemMeta.setLore(Arrays.asList(ChatColor.AQUA + "Item Colecionável", ChatColor.GRAY + "Item dado aos jogadores que estiverem presentes", ChatColor.GRAY + "na abertura do Nether. (12/08/2023)."));
+                    itemMeta.setLore(Arrays.asList(ChatColor.AQUA + "Item Colecionável", ChatColor.GRAY + "Item dado aos jogadores que estiverem presentes", ChatColor.GRAY + "na abertura do Nether (12/08/2023)."));
                     item.setItemMeta(itemMeta);
 
                     player.getInventory().addItem(item);
