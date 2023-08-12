@@ -15,7 +15,12 @@ commands:
   terreno:
     description: Terreno
     usage: /terreno
-
+  sub:
+    description: Sub
+    usage: /sub
+  vip:
+    description: Vip
+    usage: /vip
   item1:
     description: Recebe o item colecionável da abertura do servidor
     usage: /item1
@@ -25,3 +30,4 @@ commands:
   item3:
     description: Recebe o item colecionável da Abertura do Nether
     usage: /item3
+
