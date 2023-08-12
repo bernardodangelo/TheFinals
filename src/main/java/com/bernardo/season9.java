@@ -36,6 +36,10 @@ public final class season9 extends JavaPlugin implements Listener {
     private String message2 = ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "]" + ChatColor.AQUA + " Entre no Discord do Servidor: " +
             ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "discord.gg/kZQKjBe";
 
+    private String message3 = ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "]" + ChatColor.AQUA + " Vire " +
+            ChatColor.DARK_PURPLE + ChatColor.BOLD + "SUB" + ChatColor.AQUA + " ou " + ChatColor.GREEN + ChatColor.BOLD + "VIP " + ChatColor.AQUA + " utilizando " + ChatColor.DARK_PURPLE + ChatColor.BOLD + "/sub" + ChatColor.AQUA + " ou " + ChatColor.GREEN + ChatColor.BOLD + "/vip" +
+            ChatColor.AQUA + "para ter acesso a comandos como:" + ChatColor.RED + "/sethome, /tpa" + ChatColor.AQUA + " e " + ChatColor.RED + "/skin.";
+
     @Override
     public void onEnable() {
         getLogger().info("Season 9 Plugin Iniciado.");
@@ -69,7 +73,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     player.spigot().sendMessage(createComponent1());
                 }
             }
-        }.runTaskTimer(this, 0L, 77 * 60 * 20L); // 77 * 60 = 77min
+        }.runTaskTimer(this, 0L, 1 * 60 * 20L); // 77 * 60 = 77min
     }
 
     private void startTimer2() {
@@ -80,7 +84,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     player.spigot().sendMessage(createComponent2());
                 }
             }
-        }.runTaskTimer(this, 0L, 60 * 60 * 20L); // 40 * 60 = 60min
+        }.runTaskTimer(this, 0L, 1 * 60 * 20L); // 40 * 60 = 60min
     }
 
     private void startTimer3() {
@@ -91,7 +95,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     player.spigot().sendMessage(createComponent2());
                 }
             }
-        }.runTaskTimer(this, 0L, 60 * 60 * 20L); // 40 * 60 = 60min
+        }.runTaskTimer(this, 0L, 1 * 60 * 20L); // 40 * 60 = 60min
     }
 
     private TextComponent createComponent1() {

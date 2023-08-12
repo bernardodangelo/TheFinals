@@ -21,3 +21,6 @@ commands:
   item2:
     description: Recebe o item colecionável do r/Place 2023
     usage: /item2
+  item3:
+    description: Recebe o item colecionável da Abertura do Nether
+    usage: /item3
