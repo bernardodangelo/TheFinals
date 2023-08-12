@@ -182,6 +182,22 @@ public final class season9 extends JavaPlugin implements Listener {
                 sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
             }
             return true;
+        } else if (command.getName().equalsIgnoreCase("sub")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.DARK_PURPLE + "Vire inscrito na minha Twitch: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://twitch.tv/excambaw" + ChatColor.DARK_PURPLE + "para receber a tag Sub. Você pode se inscrever gratuitamente utilizando Amazon Prime.");
+            } else {
+                sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
+            }
+            return true;
+        } else if (command.getName().equalsIgnoreCase("vip")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.GREEN + "Doe 7 reais colocando o seu nick na mensagem: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://www.streamar.com.br/excambaw" + ChatColor.GREEN + "para receber a tag Vip.");
+            } else {
+                sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
+            }
+            return true;
         } else if (command.getName().equalsIgnoreCase("item1")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
