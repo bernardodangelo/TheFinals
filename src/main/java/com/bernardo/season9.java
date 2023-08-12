@@ -36,6 +36,7 @@ public final class season9 extends JavaPlugin implements Listener {
     private String message2 = ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "]" + ChatColor.AQUA + " Entre no Discord do Servidor: " +
             ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "discord.gg/kZQKjBe";
 
+
     @Override
     public void onEnable() {
         getLogger().info("Season 9 Plugin Iniciado.");
@@ -43,6 +44,7 @@ public final class season9 extends JavaPlugin implements Listener {
 
         startTimer1();
         startTimer2();
+        startTimer3();
     }
 
     @Override
@@ -68,10 +70,21 @@ public final class season9 extends JavaPlugin implements Listener {
                     player.spigot().sendMessage(createComponent1());
                 }
             }
-        }.runTaskTimer(this, 0L, 77 * 60 * 20L); // 77 * 60 = 129min
+        }.runTaskTimer(this, 0L, 77 * 60 * 20L); // 77 * 60 = 77min
     }
 
     private void startTimer2() {
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                for (Player player : Bukkit.getOnlinePlayers()) {
+                    player.spigot().sendMessage(createComponent2());
+                }
+            }
+        }.runTaskTimer(this, 0L, 60 * 60 * 20L); // 40 * 60 = 60min
+    }
+
+    private void startTimer3() {
         new BukkitRunnable() {
             @Override
             public void run() {
@@ -148,7 +161,7 @@ public final class season9 extends JavaPlugin implements Listener {
         } else if (command.getName().equalsIgnoreCase("loja")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como criar uma loja no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://www.twitch.tv/excambaw/clip/CleverTiredSkirretHassaanChop-UpCCxcMlxSffw_Cg");
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como criar uma loja no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://clips.twitch.tv/CleverTiredSkirretHassaanChop-UpCCxcMlxSffw_Cg");
             } else {
                 sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
             }
@@ -200,6 +213,24 @@ public final class season9 extends JavaPlugin implements Listener {
 
                     player.getInventory().addItem(item);
                     player.sendMessage(ChatColor.GREEN + "Você recebeu o item especial do r/Place 2023.");
+                } else {
+                    player.sendMessage(ChatColor.RED + "Você não tem permissão para executar este comando.");
+                }
+            } else {
+                sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
+            }
+        } else if (command.getName().equalsIgnoreCase("item3")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                if (player.hasPermission("season9.item3")) {
+                    ItemStack item = new ItemStack(Material.NETHERRACK);
+                    ItemMeta itemMeta = item.getItemMeta();
+                    itemMeta.setDisplayName(ChatColor.DARK_RED + "" + ChatColor.BOLD + "Abertura do Nether");
+                    itemMeta.setLore(Arrays.asList(ChatColor.AQUA + "Item Colecionável", ChatColor.GRAY + "Item dado aos jogadores que estiverem presentes", ChatColor.GRAY + "na abertura do Nether. (12/08/2023)."));
+                    item.setItemMeta(itemMeta);
+
+                    player.getInventory().addItem(item);
+                    player.sendMessage(ChatColor.GREEN + "Você recebeu o item especial da abertura do Nether.");
                 } else {
                     player.sendMessage(ChatColor.RED + "Você não tem permissão para executar este comando.");
                 }
