@@ -36,7 +36,6 @@ public final class season9 extends JavaPlugin implements Listener {
     private String message2 = ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "]" + ChatColor.AQUA + " Entre no Discord do Servidor: " +
             ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "discord.gg/kZQKjBe";
 
-
     @Override
     public void onEnable() {
         getLogger().info("Season 9 Plugin Iniciado.");
