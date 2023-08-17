@@ -15,6 +15,9 @@ commands:
   terreno:
     description: Terreno
     usage: /terreno
+  tabela:
+    description: Tabela
+    usage: /tabela
   sub:
     description: Sub
     usage: /sub
@@ -30,4 +33,3 @@ commands:
   item3:
     description: Recebe o item colecionável da Abertura do Nether
     usage: /item3
-

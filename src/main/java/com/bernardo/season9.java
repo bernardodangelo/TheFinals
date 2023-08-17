@@ -73,7 +73,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     player.spigot().sendMessage(createComponent1());
                 }
             }
-        }.runTaskTimer(this, 0L, 62 * 60 * 20L); // 77 * 60 = 77min
+        }.runTaskTimer(this, 0L, 46 * 60 * 20L); // 77 * 60 = 77min
     }
 
     private void startTimer2() {
@@ -84,7 +84,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     player.spigot().sendMessage(createComponent2());
                 }
             }
-        }.runTaskTimer(this, 0L, 43 * 60 * 20L); // 40 * 60 = 60min
+        }.runTaskTimer(this, 0L, 37 * 60 * 20L); // 40 * 60 = 60min
     }
 
     private void startTimer3() {
@@ -95,7 +95,7 @@ public final class season9 extends JavaPlugin implements Listener {
                     player.spigot().sendMessage(createComponent3());
                 }
             }
-        }.runTaskTimer(this, 0L, 49 * 60 * 20L); // 40 * 60 = 60min
+        }.runTaskTimer(this, 0L,39  * 60 * 20L); // 40 * 60 = 60min
     }
 
     private TextComponent createComponent1() {
@@ -106,7 +106,7 @@ public final class season9 extends JavaPlugin implements Listener {
 
     private TextComponent createComponent2() {
         TextComponent component = new TextComponent(message2);
-        component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/kZQKjBe"));
+        component.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "discord.gg/kZQKjBe"));
         return component;
     }
     private TextComponent createComponent3() {
@@ -184,7 +184,7 @@ public final class season9 extends JavaPlugin implements Listener {
         } else if (command.getName().equalsIgnoreCase("loja")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como criar uma loja no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://clips.twitch.tv/CleverTiredSkirretHassaanChop-UpCCxcMlxSffw_Cg");
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como criar uma loja no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "clips.twitch.tv/CleverTiredSkirretHassaanChop-UpCCxcMlxSffw_Cg");
             } else {
                 sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
             }
@@ -192,7 +192,7 @@ public final class season9 extends JavaPlugin implements Listener {
         } else if (command.getName().equalsIgnoreCase("terreno")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como proteger terreno no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://www.twitch.tv/excambaw/clip/ZanyPatientBeaverDoggo-vdbvmQRk5mYc8Uxd?filter=clips&range=7d");
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.YELLOW + "Como proteger terreno no servidor: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "twitch.tv/excambaw/clip/ZanyPatientBeaverDoggo-vdbvmQRk5mYc8Uxd?filter=clips&range=7d");
             } else {
                 sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
             }
@@ -200,7 +200,7 @@ public final class season9 extends JavaPlugin implements Listener {
         } else if (command.getName().equalsIgnoreCase("sub")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.DARK_PURPLE + "Se inscreva na minha Twitch: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "https://twitch.tv/excambaw" + ChatColor.DARK_PURPLE + " para receber a tag Sub. Você pode se inscrever gratuitamente utilizando Amazon Prime e ter acesso aos comandos: " + ChatColor.RED + "/sethome, /tpa" + ChatColor.DARK_PURPLE + " e " + ChatColor.RED + "/skin.");
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.DARK_PURPLE + "Se inscreva na minha Twitch: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "twitch.tv/excambaw" + ChatColor.DARK_PURPLE + " para receber a tag Sub. Você pode se inscrever gratuitamente utilizando Amazon Prime e ter acesso aos comandos: " + ChatColor.RED + "/sethome, /tpa" + ChatColor.DARK_PURPLE + " e " + ChatColor.RED + "/skin.");
             } else {
                 sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
             }
@@ -208,7 +208,15 @@ public final class season9 extends JavaPlugin implements Listener {
         } else if (command.getName().equalsIgnoreCase("vip")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.GREEN + "Doe 7 reais colocando o seu nick na mensagem: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + " https://www.streamar.com.br/excambaw" + ChatColor.GREEN + " para receber a tag Vip e ter acesso aos comandos: " + ChatColor.RED + "/sethome, /tpa" + ChatColor.GREEN + " e " + ChatColor.RED + "/skin.");
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.GREEN + "Doe 7 reais colocando o seu nick na mensagem: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + " streamar.com.br/excambaw" + ChatColor.GREEN + " para receber a tag Vip e ter acesso aos comandos: " + ChatColor.RED + "/sethome, /tpa" + ChatColor.GREEN + " e " + ChatColor.RED + "/skin.");
+            } else {
+                sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
+            }
+            return true;
+        } else if (command.getName().equalsIgnoreCase("tabela")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.YELLOW + ChatColor.BOLD + "SEASON 9" + ChatColor.GRAY + "] " + ChatColor.DARK_RED + "Tabela dos melhores clans e jogadores de Eventos: " + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "discord.com/channels/713144073019588619/1141559735624138762/1141560493232881664");
             } else {
                 sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
             }
