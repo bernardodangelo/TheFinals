@@ -2,7 +2,7 @@
 
 A private custom Minecraft plugin made for my Minecraft Server.
 
-## Features 
+## Features 🛠
 
 - Custom commands.
 
