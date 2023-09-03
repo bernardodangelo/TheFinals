@@ -33,3 +33,6 @@ commands:
   item3:
     description: Recebe o item colecionável da Abertura do Nether
     usage: /item3
+  item4:
+    description: Recebe o item colecionável do Prefeito do servidor
+    usage: /item4

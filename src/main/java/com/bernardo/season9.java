@@ -169,7 +169,20 @@ public final class season9 extends JavaPlugin implements Listener {
         }
     }
 
+    @EventHandler
+    public void onPlayerInteractChavePrefeito(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+        ItemStack item = player.getInventory().getItemInMainHand();
 
+        if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            if (item != null && item.getType() == Material.TRIPWIRE_HOOK && item.hasItemMeta()) {
+                ItemMeta itemMeta = item.getItemMeta();
+                if (itemMeta != null && itemMeta.getDisplayName().equals(ChatColor.GOLD + "" + ChatColor.BOLD + "Chave da Cidade")) {
+                    event.setCancelled(true);
+                }
+            }
+        }
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -270,6 +283,25 @@ public final class season9 extends JavaPlugin implements Listener {
 
                     player.getInventory().addItem(item);
                     player.sendMessage(ChatColor.GREEN + "Você recebeu o item especial da abertura do Nether.");
+                } else {
+                    player.sendMessage(ChatColor.RED + "Você não tem permissão para executar este comando.");
+                }
+            } else {
+                sender.sendMessage(ChatColor.RED + "Este comando só pode ser executado por jogadores.");
+            }
+        } else if (command.getName().equalsIgnoreCase("item4")) {
+            if (sender instanceof Player) {
+                Player player = (Player) sender;
+                if (player.hasPermission("season9.item4")) {
+                    ItemStack item = new ItemStack(Material.TRIPWIRE_HOOK);
+                    ItemMeta itemMeta = item.getItemMeta();
+                    itemMeta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Chave da Cidade");
+
+                    itemMeta.setLore(Arrays.asList(ChatColor.AQUA + "Item Colecionável", ChatColor.GRAY + "Item dado ao duardopow, jogador que foi escolhido", ChatColor.GRAY + "como prefeito do servidor (03/09/2023)."));
+                    item.setItemMeta(itemMeta);
+
+                    player.getInventory().addItem(item);
+                    player.sendMessage(ChatColor.GREEN + "Você recebeu o item especial do prefeito do servidor.");
                 } else {
                     player.sendMessage(ChatColor.RED + "Você não tem permissão para executar este comando.");
                 }
