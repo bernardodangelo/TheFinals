@@ -1,6 +1,6 @@
 # Season 9 Plugin ⛏️
 
-A private Minecraft plugin made for my Minecraft Server.
+A custom Minecraft plugin made for my Minecraft Server: Season 9.
 
 ## Features 🛠
 
