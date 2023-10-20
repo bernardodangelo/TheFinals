@@ -1,5 +1,5 @@
 name: Season9
-version: '${project.version}'
+version: '1.0'
 main: com.bernardo.season9
 api-version: '1.20'
 commands:

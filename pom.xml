@@ -6,7 +6,7 @@
 
     <groupId>com.bernardo</groupId>
     <artifactId>season-9</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>Season 9</name>
