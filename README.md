@@ -1,8 +1,8 @@
-# Season 9 Plugin ⛏️
+# Season 9 Plugin
 
 A custom Minecraft plugin made for my Minecraft Server: Season 9.
 
-## Features 🛠
+## Features
 
 - Custom commands.
 
@@ -12,6 +12,6 @@ A custom Minecraft plugin made for my Minecraft Server: Season 9.
 
 - Auto messages.
 
-## Contact 📞
+## Contact
 
 See my contact information on my [GitHub profile](https://github.com/bernardodangelo).
